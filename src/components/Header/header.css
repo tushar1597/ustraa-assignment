@@ -1,0 +1,124 @@
+.ust-hdr-wr{
+    position: fixed;
+    height: 4.375rem;
+    background: yellowgreen;
+    display: flex;
+    width: 100%;
+    z-index:1000;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+.shd-div{
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    /* margin-top: 100px; */
+    background: lightcoral;
+    /* z-index: 0; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 15px 0px;
+}
+.ust-hdr{
+    position: fixed;
+    background: yellow;
+    max-width: var(--pg-width);
+    width: 100%;
+    margin: 0 auto;
+    height: 3.125rem;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.ust-hdr .ust-icn{
+    font-family: icomoon!important;
+}
+.ust-hdr .ust-icn:before{
+    content: '\1F47E';
+    color: blue;
+}
+.ust-hdr .mn-icn{
+    background: orange;
+    padding: 12px; 
+}
+.ust-hdr .ust-logo{
+    width: 166px;
+    background: skyblue;
+    height: 100%;
+    padding: 0 8px;
+}
+.ust-hdr .rgt-sec{
+    width: calc(166px + 48px);
+    background: pink;
+    height: 100%;
+    margin-left: auto;
+}
+.ust-hdr .srch-inp{
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    border: none;
+    max-height: 48px;
+    outline: none;
+    padding: 0 40px;
+}
+.ust-hdr .srch-fm{
+    width: calc(100% - 166px - 48px);
+    height: 100%;
+    background: palegreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ust-bnr{
+    /* margin-top: -10px; */
+    height: 55px;
+    background: olivedrab;
+    padding-bottom: 5px;
+    /* z-index: 100; */
+    position: sticky;
+    top: 0;
+    /* display: flex; */
+    width: calc(100%);
+    /* margin: 0 12px; */
+    /* justify-content: center; */
+    /* padding: 0 10px 5px 10px; */
+    padding: 0 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 12px 0px;
+}
+.ust-bnr .bnr-col{
+    flex: 0 0 11.11111%;
+    max-width: 11.11111%;
+    padding:0px 4px;
+    box-sizing: border-box;
+    background: skyblue;
+}
+.ust-bnr .bnr-lnk{
+    display: inline-flex;
+    font-size: 14px;
+    height: 100%;
+    background: pink;
+    align-items: center;
+    padding: 0 0 0 8px ;
+    width: 100%;
+    text-decoration:none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.ust-bnr .ust-row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+    background: yellow;
+    height: 100%;
+}
+.ust-bnr .bnr-img{
+    width: 28px;
+    height: 28px;
+    margin-right: 2px;
+}

@@ -1,0 +1,113 @@
+h1{
+    /* color: red; */
+}
+.uts-ft-wr{
+    padding: 15px 0 0 0;
+    background-color: #f3f3f3;
+}
+.uts-ft-wr .uts-ft{
+    max-width: var(--pg-width);
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.uts-ft-wr .ft-rw-1{
+    display: flex;
+    margin-bottom: 30px;
+}
+.uts-ft-wr .rw-1-txt{
+    padding-left: 30px;
+    color: #757575;
+}
+.uts-ft-wr .ft-row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -15px;
+}
+.uts-ft-wr .ft-col{
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding:0px 6px;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+.uts-ft-wr .ft-rw-2{
+    padding: 0 16px;   
+}
+.uts-ft-wr .ft-col-ct{
+       
+}
+.uts-ft-wr .ft-col-hd{
+    margin:0;
+    padding: 5px 0;
+}
+.uts-ft-wr .ft-lnk{
+    font-size: 12px;
+    margin: 6px 0; 
+    display: block;
+    font-family:var(--font);
+    font-weight: 500;
+    color: rgb(117, 117, 117);
+    line-height: 16px;
+    text-decoration:none;
+    text-transform: capitalize;
+}
+.uts-ft-wr .ft-lnk:hover{
+    color: #187dbb;
+    text-decoration:underline;
+}
+.uts-ft-wr .ft-txt{
+    font-size: 12px;
+    margin: 0px 0; 
+    display: block;
+    font-family:var(--font);
+    color: rgb(117, 117, 117);
+    line-height: 20px;
+}
+.uts-ft-wr .ft-col-hd-2{
+    margin-top: 20px;
+}
+.uts-ft-wr .ft-card{
+    width: 100%;
+    min-height: 50px;
+    background-image: linear-gradient(282deg, #526b7a, #0f4667 39%, #0a334c);
+}
+.uts-ft-wr .ft-hm-sc{
+    width: 100%;
+    display: block;
+    background: #fff;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    margin-top: 15px;
+}
+.uts-ft-wr .ft-hm-sc-ct{
+    display: flex;
+    max-width: var(--pg-width);
+    width: 100%;
+    margin: 0 auto;
+}
+.uts-ft-wr .ft-hm-1{
+    font-size: 12px;
+    text-align: left;
+    color: #757575;
+    line-height: 20px;
+    width: max-content;
+}
+.uts-ft-wr .ft-hm-2{
+    width: 194px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.uts-ft-wr .hm-logo{
+    width: 63px;
+    height: 48px;
+}
+.uts-ft-wr .ft-hm-txt{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
