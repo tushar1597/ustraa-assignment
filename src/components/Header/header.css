@@ -1,7 +1,7 @@
 .ust-hdr-wr{
     position: fixed;
     height: 4.375rem;
-    background: yellowgreen;
+    background: #fff;
     display: flex;
     width: 100%;
     z-index:1000;
@@ -14,44 +14,54 @@
     height: 70px;
     position: sticky;
     top: 0;
-    /* margin-top: 100px; */
-    background: lightcoral;
-    /* z-index: 0; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 15px 0px;
 }
 .ust-hdr{
     position: fixed;
-    background: yellow;
+    /* background: yellow; */
     max-width: var(--pg-width);
     width: 100%;
     margin: 0 auto;
     height: 3.125rem;
     padding: 0 0.5rem;
-    display: flex;
+    display: block;
     align-items: center;
 }
 .ust-hdr .ust-icn{
-    font-family: icomoon!important;
-}
-.ust-hdr .ust-icn:before{
-    content: '\1F47E';
-    color: blue;
+    object-fit: contain;
+    width: 107px;
+    height: 32px;
+    /* background: green; */
 }
 .ust-hdr .mn-icn{
-    background: orange;
+    /* background: orange; */
     padding: 12px; 
 }
 .ust-hdr .ust-logo{
     width: 166px;
-    background: skyblue;
+    display: flex;
+    align-items: center;
+    /* background: skyblue; */
     height: 100%;
     padding: 0 8px;
+    box-sizing: border-box;
 }
 .ust-hdr .rgt-sec{
     width: calc(166px + 48px);
-    background: pink;
+    /* background: pink; */
     height: 100%;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.ust-hdr .rs-btn{
+    min-width: 0;
+    width: 36px;
+    height: 36px;
+}
+.ust-hdr .rs-icn{
+    font-size: 18px;
 }
 .ust-hdr .ust-hd-dr-btn{
     width: 48px;
@@ -61,17 +71,58 @@
 }
 .ust-hdr .srch-inp{
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     height: 100%;
     border: none;
+    box-sizing: border-box;
     max-height: 48px;
     outline: none;
     padding: 0 40px;
+    background-color: #efefef;
+    color: rgba(0, 0, 0, 0.87);
+}
+.ust-hdr .srch-inp-btn,.ust-hdr .srch-inp-btn:focus{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    position: relative;
+    padding: 0 40px;
+    background-color: #efefef;
+    color: rgba(0, 0, 0, 0.57);
+    text-align: left;
+    display: block;
+    text-transform: none;
+}
+.ust-hdr-wr .srch-icn{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.76);
 }
 .ust-hdr .srch-fm{
-    width: calc(100% - 166px - 48px);
+    width: 100%;
+    max-width: 600px;
     height: 100%;
-    background: palegreen;
+    position: relative;
+    max-height: 48px;
+    /* background: orange; */
+}
+.ust-hdr .srch-fm-sc{
+    width: calc(100% - 166px - 48px - 166px - 48px);
+    height: 100%;
+    position: relative;
+    /* background: palegreen; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ust-hdr .srch-fm-mb{
+    width: calc(100% - 48px - 4px);
+    height: 36px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    /* background: palegreen; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,11 +130,12 @@
 .ust-bnr{
     /* margin-top: -10px; */
     height: 55px;
-    background: olivedrab;
+    /* background: olivedrab; */
     padding-bottom: 5px;
     /* z-index: 100; */
     position: sticky;
     top: 0;
+    background: #fff;
     /* display: flex; */
     width: calc(100%);
     /* margin: 0 12px; */
@@ -92,21 +144,25 @@
     padding: 0 24px;
     overflow: hidden;
     box-sizing: border-box;
+}
+#hr-sh-ust-bnr{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 12px 0px;
+
 }
 .ust-bnr .bnr-col{
     flex: 0 0 11.11111%;
     max-width: 11.11111%;
     padding:0px 4px;
     box-sizing: border-box;
-    background: skyblue;
+    /* background: skyblue; */
 }
 .ust-bnr .bnr-lnk{
     display: inline-flex;
     font-size: 14px;
     height: 100%;
-    background: pink;
+    /* background: pink; */
     align-items: center;
+    justify-content: center;
     padding: 0 0 0 8px ;
     width: 100%;
     text-decoration:none;
@@ -120,16 +176,16 @@
     flex-wrap: wrap;
     margin-right: -16px;
     margin-left: -16px;
-    background: yellow;
+    /* background: yellow; */
     height: 100%;
 }
 .ust-bnr .bnr-img{
     width: 28px;
     height: 28px;
-    margin-right: 2px;
+    margin-right: 4px;
 }
 .ust-dr-container {
-    
+
 }
 .ust-dr-container .dr-it{
 
@@ -138,4 +194,111 @@
     font-weight: 500;
     padding: 10px 16px;
     margin: 10px 0px;
+}
+.ust-hdr .ust-hrd-ct{
+    display: flex;
+    /* padding: 0 10px; */
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.ust-hdr-wr .ust-hd-bt-sc{
+    display: none;
+    
+}
+.ust-hdr-wr .msg-icn{
+    font-size: 24px;
+    color: var(--theme-blue)
+    
+}
+.ust-hdr-wr .msg-btn{
+    /* background: yellowgreen; */
+    width: 48px;
+    height: 100%;
+    min-width: 0;
+    margin-left: auto;
+}
+@media (max-width: 1000px){
+    .ust-bnr .ust-row{
+        min-width: 1060px;
+    }   
+}
+@media (max-width: 500px){
+    .ust-hdr-wr .srch-icn{
+        left: 5px;
+        top: 7px;
+    }
+    .ust-hdr .ust-icn{
+        width: 93px;
+        height: 28px;
+        /* background: red; */
+    }
+    .ust-hdr-wr .ust-hd-bt-sc{
+        display: flex;
+    }
+    .shd-div{
+        height: calc(64px + 36px);
+    }
+    .ust-bnr{
+        padding: 0 16px; 
+        width: max-content;
+        /* overflow: scroll;  */
+    }
+    .ust-bnr::-webkit-scrollbar{
+        /* display: none; */
+    }   
+    .ust-bnr .bnr-lnk{
+        flex-direction: column;
+        justify-content: center;
+        padding:0 6px;
+        font-size:9px;
+    }
+    .ust-bnr .ust-row{
+        min-width: max-content;
+    }
+    .ust-bnr .bnr-col {
+        /* flex: 0 0 11.11111%; */
+        /* max-width: 11.11111%; */
+        max-width: max-content;
+        flex: none;
+        min-width: 60px;
+        padding: 0px 4px;
+        box-sizing: border-box;
+        /* background: skyblue; */
+    }
+    .ust-hdr .srch-fm{
+        display: none;
+    }
+    .ust-hdr-wr{
+        padding: 0 10px;
+        box-sizing: border-box;
+        /* background: blue; */
+        display: flex;
+        height: calc(64px + 36px);
+        /* width: calc(100% - 20px); */
+        /* margin-left: 10px; */
+        overflow: hidden;
+    }
+    .ust-hdr{
+        /* background: yellow; */
+        width: 100%;
+        height: calc(3.125rem + 36px);
+        max-width: 100%;
+        display: block;
+        
+    }
+    .ust-hdr .ust-hrd-ct{
+        display: flex;
+        padding: 0;
+        height: calc(100% - 36px);
+        align-items: center;
+        justify-content: center;
+    }
+    .ust-hdr .ust-logo{
+        padding: 0 4px 0 0;
+        width: 136px;
+    }
+    .ust-hdr .rgt-sec{
+        width: calc(100% - 48px - 136px);
+    }
 }

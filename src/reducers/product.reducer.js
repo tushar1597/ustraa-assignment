@@ -5,6 +5,10 @@ const initialState = {
     tab : 0,
     catgs : [],
     prd_lst : [],
+    sel_catg_id : 185,
+    product_map: {
+
+    }
 }
 
 const productReducer = (state = initialState, action) => {
@@ -13,6 +17,21 @@ const productReducer = (state = initialState, action) => {
             return {...state,
                 catgs: action.catgs,
                 prd_lst: action.prd_lst,
+            }
+        }
+        case PRODUCT.SET_SEL_CATEGORY : {
+            return {...state,
+                sel_catg_id : action.value,
+            }
+        }
+        case PRODUCT.UPDATE_PRODUCT_MAP : {
+            return {...state,
+                product_map : action.value,
+            }
+        }
+        case PRODUCT.UPDATE_PRODUCT_LIST : {
+            return {...state,
+                prd_lst : action.value,
             }
         }
 

@@ -4,7 +4,7 @@
     width: 100%;
     margin: 0 auto;
     display: block;
-    background: orange;
+    /* background: orange; */
     padding: 0;
 }
 .lp-container .mn-hdng{
@@ -16,4 +16,11 @@
 }
 .lp-container p, .lp-container button{
     font: var(--font);
+}
+@media (max-width: 500px){
+    .lp-container .mn-hdng{
+        padding: 15px 10px;
+        font-size: 20px;
+    }
+    
 }

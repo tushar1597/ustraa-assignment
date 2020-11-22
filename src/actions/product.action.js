@@ -35,3 +35,40 @@ export const getCategoriesAPI = () => dispatch => {
             //   FUNCTIONS.errorHandler(err,dispatch);
           })
 }
+export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
+    let action = {};
+    action.type = PRODUCT.SET_SEL_CATEGORY;
+    action.value = catg_id;
+    dispatch(action);
+    if(product_map[catg_id] && product_map[catg_id].length){
+            action.type = PRODUCT.UPDATE_PRODUCT_LIST;
+            action.value = product_map[catg_id];
+            dispatch(action);
+        return;
+    }
+    var req_data = {
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        params: {
+            category_id: catg_id,
+        }
+      }
+      axios.get(ROUTES.GET_CATEGORY_PRODUCTS, req_data)
+          .then(res => {
+            console.log(res);
+            let products = res && res.data  && res.data.products ? res.data.products : [];
+            let new_product_map = JSON.parse(JSON.stringify(product_map));
+            new_product_map[catg_id] = products;
+            let action = {};
+            action.value = new_product_map;
+            action.type = PRODUCT.UPDATE_PRODUCT_MAP;
+            dispatch(action);
+            action.type = PRODUCT.UPDATE_PRODUCT_LIST;
+            action.value = new_product_map[catg_id];
+            dispatch(action);
+          }).catch(err => {
+              // console.log("ERROR::",err);
+            //   FUNCTIONS.errorHandler(err,dispatch);
+          })
+}

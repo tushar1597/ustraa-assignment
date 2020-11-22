@@ -8,6 +8,9 @@ import Header from "../../components/Header/header";
 import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer/footer";
 import ScrollableTab from "../../components/Tabs/scrollable-tab";
+import StarRateIcon from '@material-ui/icons/StarRate';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import Button from '@material-ui/core/Button';
 
 class ProductList extends Component {
     componentDidUpdate(prev_props){
@@ -26,36 +29,35 @@ class ProductList extends Component {
                             this.props.prd_lst && this.props.prd_lst.map ? this.props.prd_lst.map(({name,price,rating,url,final_price,id,image_urls},index)=>{
                                 return(
                                     <div className="prd-lst-col">
+                                        <div className={rating ? "str-sc mb" : "hide"}>
+                                        <p className="str-rtg">{rating}</p><StarRateIcon className="str-icn"/>
+                                        </div>
                             <div className="crd-sc-1">
+                            <div className={rating ? "str-sc wb" : "hide"}>
+                                        <p className="str-rtg">{rating}</p><StarRateIcon className="str-icn"/>
+                                        </div>
+                            <div className="htu-sc wb">
+                                            <YouTubeIcon className="htu-icn"/><p className="htu-txt">How to use</p>
+                                        </div>
                                 <Link to="/" className="crd-lnk">
                                     <img className="crd-img" src={image_urls && image_urls.x300 ? image_urls.x300 : ""}/>
                                 </Link>
                             </div>
                             <div className="crd-sc-2">
+                            <div className="htu-sc mb">
+                                            <YouTubeIcon className="htu-icn"/><p className="htu-txt">How to use</p>
+                                        </div>
                                 <p className="crd-nm">{name}</p>
                                 <div className="crd-prc-sc">
                                     <p className="crd-prc">₹ {final_price}</p>
                                 <p className="crd-prc-fk">₹ {price}</p>
                                 </div>
-                                <button className="crd-btn">Add to cart</button>
+                                <Button className="crd-btn">Add to cart</Button>
                             </div>
                          </div>
                                 );
                             }) : null
                         }
-                         
-                         {/* <div className="prd-lst-col">
-
-                         </div>
-                         <div className="prd-lst-col">
-
-                         </div>
-                         <div className="prd-lst-col">
-
-                         </div>
-                         <div className="prd-lst-col">
-
-                         </div> */}
                     </div>
                 </div>
             </Fragment>

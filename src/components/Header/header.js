@@ -4,7 +4,14 @@ import React, { Component, Fragment } from "react";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Switch, Redirect, withRouter } from 'react-router';
+import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import UstraaLogo from '../../assets/images/ust-logo.png';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import MessageIcon from '@material-ui/icons/Message';
 // import FullScreenLoader from '../components/loader/full-screen-loader';
 // import Sidepanel from './sidepanel/sidepanel';
 // import SignInPage from './sign-in-page';
@@ -12,6 +19,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 // import { STORAGEFUNCTIONS } from '../utils/functions'; 
 import './header.css'
 import  Drawer  from "../Drawer/drawer";
+import HorizontalScrollbar from "../Scrollbar/horizontal-scrollbar";
 
 class Header extends Component {
     componentDidUpdate(prev_props){
@@ -26,6 +34,7 @@ class Header extends Component {
             <Fragment>
                 <div className="ust-hdr-wr">
                 <div className="ust-hdr">
+                    <div className="ust-hrd-ct">
                     <Drawer button={<MenuIcon className="mn-icn"/>} classes={{button:'ust-hd-dr-btn'}}>
                     <div className="ust-dr-container">
                     <div className="dr-it">
@@ -33,14 +42,31 @@ class Header extends Component {
                     </div>
                     </div>
                     </Drawer>
-                    <span className="ust-icn" className="ust-logo"></span>
+                    <div className="ust-logo">
+                    <img src={UstraaLogo} className="ust-icn"></img>
+                    </div>
+                    <div className="srch-fm-sc">
                     <form className="srch-fm">
+                    <SearchIcon className="srch-icn"/>
                     <input className="srch-inp" placeholder={"Search a Product"}/>
                     </form>
-                    <div className="rgt-sec"></div>    
+                    </div>
+                    <div className="rgt-sec">
+                        <Button className="rs-btn"><NotificationsIcon className="rs-icn"/></Button>
+                        <Button className="rs-btn"><ShoppingCartIcon className="rs-icn"/></Button>
+                        <Button className="rs-btn"><AccountCircleIcon className="rs-icn"/></Button>
+                    </div>
+                    </div> 
+                    <div className="ust-hd-bt-sc">
+                    <form className="srch-fm-mb">
+                    <Button className="srch-inp-btn" placeholder={"Search a Product"}><SearchIcon className="srch-icn"/> Search a Product</Button>
+                    </form>
+                    <Button className="msg-btn"><MessageIcon className="msg-icn"/></Button>
+                    </div>   
                 </div>
                 </div>
                 <div className="shd-div"></div>
+                <HorizontalScrollbar isHover={true} id="hr-sh-ust-bnr">
                 <div className="ust-bnr">
                 <div className="ust-row">
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/icon_2_1_.png"/>Sale</Link></div>
@@ -53,7 +79,8 @@ class Header extends Component {
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/Lip_Balm_option2_1.png"/>Winter Care</Link></div>
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/icon_2_1_.png"/>More Categories</Link></div>
                 </div>   
-                </div>                       
+                </div>
+                </HorizontalScrollbar>                       
             </Fragment>
         );
     }

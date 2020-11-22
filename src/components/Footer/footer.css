@@ -18,6 +18,7 @@ h1{
 .uts-ft-wr .rw-1-txt{
     padding-left: 30px;
     color: #757575;
+    font-size: 14px;
 }
 .uts-ft-wr .ft-row{
     display: -ms-flexbox;
@@ -73,6 +74,8 @@ h1{
 .uts-ft-wr .ft-card{
     width: 100%;
     min-height: 50px;
+    padding: 1px 20px 15px 20px;
+    box-sizing: border-box;
     background-image: linear-gradient(282deg, #526b7a, #0f4667 39%, #0a334c);
 }
 .uts-ft-wr .ft-hm-sc{
@@ -110,4 +113,188 @@ h1{
     font-size: 14px;
     font-weight: 500;
     text-align: center;
+}
+.uts-ft-wr .ft-rw-1-mb{
+    display: none;
+}
+.uts-ft-wr .ft-col-wb{
+    display: block;
+}
+.uts-ft-wr .ft-col-ct-cmp{
+    
+}
+.uts-ft-wr .ft-tb-icn{
+    display: none;
+}
+.uts-ft-wr .ft-scl-btn{
+    min-width: 0px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    height:30px;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.uts-ft-wr .ft-scl-icn{
+    font-size: 18px;
+    color: #000;
+}
+.uts-ft-wr .ft-scl{
+    display: flex;
+}
+.uts-ft-wr .ft-app-btn{
+    width: 120px;
+    height: 36px;
+    display: block;
+    padding:0;
+}
+.uts-ft-wr .ft-app-btn:nth-child(2){
+    margin-left: auto;
+}
+.uts-ft-wr .ft-app-img{
+    width: 120px;
+    height: 36px;
+    object-fit: cover;
+}
+.uts-ft-wr .ft-sc-txt{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font);
+    margin: 20px 0 14px 0;
+    color: #fff;
+}
+.uts-ft-wr .ft-cnt-mb{
+    display: none;
+}
+.uts-ft-wr .ft-hm-mb{
+    display: none;
+}
+.uts-ft-wr .ft-en-icn{
+    color: #fff;
+    font-size: 18px;
+}
+.uts-ft-wr .ft-en-lk{
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #187dbb;
+    border-radius: 50%;
+}
+.uts-ft-wr .ft-logo{
+    width: 120px;
+    height: 38px;
+}
+.uts-ft-wr .ft-en-sc{
+    display: flex;
+    justify-content: center;
+}
+.uts-ft-wr .ft-hm-hd-mb{
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: var(--font);
+    font-weight: 500;
+    color: #000;
+}
+.uts-ft-wr .ft-hm-txt-mb{
+    color: #757575;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+@media (max-width: 500px){
+    .uts-ft-wr .ft-scl{
+        display: flex;
+        justify-content: center;
+    }
+    .uts-ft-wr .ft-sc-txt{
+        text-align: center;
+        margin: 20px 0 14px 0; 
+        color: #000;
+        margin-top: 16px;
+    }
+    .uts-ft-wr .ft-hm-mb{
+        display: block;
+    }
+    .uts-ft-wr .ft-hm-sc-ct{
+        padding: 0 16px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .uts-ft-wr .ft-hm-1{
+        text-align: center;
+        width: 100%;
+    }
+    .uts-ft-wr .mb-hide{
+        display: none;
+    }
+    .uts-ft-wr .ft-hm-sc{
+        margin:0;
+        padding-bottom: 58px;
+    }
+    .uts-ft-wr .ft-tb-icn{
+        display: block;
+        float:right;
+        font-size: 20px;
+        color: #757575;
+    }
+    .uts-ft-wr .ft-cnt-mb{
+        display: block;
+    }
+    .uts-ft-wr .ft-col-wb{
+        display: none;
+    }
+    .uts-ft-wr .ft-col-ct{
+        height: max-content;
+        max-height: 500px;
+        transition: all ease-in-out 0.25s;
+    }
+    .uts-ft-wr .ft-col-ct-cmp{
+        max-height: 36px;
+        overflow: hidden;
+    }
+    .uts-ft-wr .ft-rw-1{
+        display: none;
+    }
+    .uts-ft-wr .ft-col{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 16px;
+        overflow: hidden;
+        margin-bottom: 8px; 
+    }
+    .uts-ft-wr .ft-rw-1-mb{
+        display: flex;
+        height: 60px;
+        padding:0 15px;
+        background-image: linear-gradient(272deg, #526b7a, #0f4667 39%, #0a334c) !important;
+        opacity: 0.8;
+        align-items: center;
+    }
+    .uts-ft-wr .ft-rw-2{
+        padding:15px 16px;
+    }
+    .uts-ft-wr .ft-dw-txt{
+        color: #fff;
+        margin:0;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .uts-ft-wr .ft-ga-btn{
+        background: #4fcf64;
+        color: #fff;
+        min-width: 88px;
+        height: 36px;
+        margin-left: auto;
+    }
+    .uts-ft-wr .ft-ga-btn:focus{
+        background: #4fcf64;
+    }
+    .uts-ft-wr{
+        padding: 0;
+    }
 }
