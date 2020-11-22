@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 // import {  } from '../constants/constants';
 // import axios from 'axios';
 import './home.css'
+import {getCategoriesAPI} from "../../actions/product.action";
 import { connect } from 'react-redux';
 import { Switch, Redirect, withRouter } from 'react-router';
 import Header from "../../components/Header/header";
@@ -19,6 +20,7 @@ class Home extends Component {
         
     }
     componentDidMount() {
+        this.props.getCategoriesAPI();
         // let at = STORAGEFUNCTIONS.getAt();
         // let st = STORAGEFUNCTIONS.getSt();
         // if(at && st){
@@ -33,7 +35,7 @@ class Home extends Component {
         return(
             <Fragment>
                 <h1 className="mn-hdng">Our Products</h1>
-                <ScrollableTab/>
+                <ScrollableTab items={this.props.catgs}/>
                 <ProductList/>
             </Fragment>
         );
@@ -42,6 +44,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => (
     {
+        catgs: state.product.catgs
         // fs_loading : state.util.fs_loading,
         // is_lg_in : state.util.is_lg_in,
     })
@@ -49,6 +52,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = {
     // setIsLoggedIn,
     // getSellerUserAPI
+    getCategoriesAPI
 }
 
 export default withRouter(connect(

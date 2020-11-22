@@ -11,10 +11,10 @@ import ScrollableTab from "../../components/Tabs/scrollable-tab";
 
 class ProductList extends Component {
     componentDidUpdate(prev_props){
-        
+     console.log(this.props.prd_lst);   
     }
     componentDidMount() {
-      
+        
     }
     
     render() {
@@ -22,22 +22,29 @@ class ProductList extends Component {
             <Fragment>
                 <div className="prd-lst-container">
                     <div className="prd-lst-row">
-                         <div className="prd-lst-col">
+                        {
+                            this.props.prd_lst && this.props.prd_lst.map ? this.props.prd_lst.map(({name,price,rating,url,final_price,id,image_urls},index)=>{
+                                return(
+                                    <div className="prd-lst-col">
                             <div className="crd-sc-1">
                                 <Link to="/" className="crd-lnk">
-                                    <img className="crd-img" src={"https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/c/h/chrome_1__1.jpg"}/>
+                                    <img className="crd-img" src={image_urls && image_urls.x300 ? image_urls.x300 : ""}/>
                                 </Link>
                             </div>
                             <div className="crd-sc-2">
-                                <p className="crd-nm">{"Ustraa Chrome - Lithium Powered Beard Trimmer"}</p>
+                                <p className="crd-nm">{name}</p>
                                 <div className="crd-prc-sc">
-                                    <p className="crd-prc">₹ 1999</p>
-                                    <p className="crd-prc-fk">₹ 2499</p>
+                                    <p className="crd-prc">₹ {final_price}</p>
+                                <p className="crd-prc-fk">₹ {price}</p>
                                 </div>
                                 <button className="crd-btn">Add to cart</button>
                             </div>
                          </div>
-                         <div className="prd-lst-col">
+                                );
+                            }) : null
+                        }
+                         
+                         {/* <div className="prd-lst-col">
 
                          </div>
                          <div className="prd-lst-col">
@@ -48,7 +55,7 @@ class ProductList extends Component {
                          </div>
                          <div className="prd-lst-col">
 
-                         </div>
+                         </div> */}
                     </div>
                 </div>
             </Fragment>
@@ -58,6 +65,7 @@ class ProductList extends Component {
 
 const mapStateToProps = (state) => (
     {
+        prd_lst: state.product.prd_lst,
         // fs_loading : state.util.fs_loading,
         // is_lg_in : state.util.is_lg_in,
     })

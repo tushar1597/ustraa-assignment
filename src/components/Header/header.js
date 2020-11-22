@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 // import {setIsLoggedIn, getSellerUserAPI} from '../actions/util.action';
 // import { STORAGEFUNCTIONS } from '../utils/functions'; 
 import './header.css'
+import  Drawer  from "../Drawer/drawer";
 
 class Header extends Component {
     componentDidUpdate(prev_props){
@@ -25,7 +26,13 @@ class Header extends Component {
             <Fragment>
                 <div className="ust-hdr-wr">
                 <div className="ust-hdr">
-                    <MenuIcon className="mn-icn"/>
+                    <Drawer button={<MenuIcon className="mn-icn"/>} classes={{button:'ust-hd-dr-btn'}}>
+                    <div className="ust-dr-container">
+                    <div className="dr-it">
+                        <p className="dr-hd">Shop by Category</p>
+                    </div>
+                    </div>
+                    </Drawer>
                     <span className="ust-icn" className="ust-logo"></span>
                     <form className="srch-fm">
                     <input className="srch-inp" placeholder={"Search a Product"}/>

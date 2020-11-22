@@ -1,0 +1,8 @@
+.tushar{
+    background: yellow;
+    width: 300px!important;
+}
+.root-1 > div:nth-child(3){
+    background: yellowgreen;
+    /* width: 300px; */
+}

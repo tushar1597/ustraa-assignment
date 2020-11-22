@@ -28,14 +28,7 @@ class ScrollableTab extends Component {
         
     }
     componentDidMount() {
-        // let at = STORAGEFUNCTIONS.getAt();
-        // let st = STORAGEFUNCTIONS.getSt();
-        // if(at && st){
-        //     this.props.getSellerUserAPI(st);
-        //     // this.props.setIsLoggedIn(true);
-        // } else {
-        //     this.props.setIsLoggedIn(false);
-        // }
+     
     }
     
     render() {
@@ -43,11 +36,11 @@ class ScrollableTab extends Component {
             <Fragment>
                 <div className="scr-tb-container">
                     {
-                        TABS.map(({text},index)=>{
+                        this.props.items ? this.props.items.map(({category_id,category_name,category_image},index)=>{
                             return(
-                               <button className="tb-btn" key={"scr-tb-btn-"+index}>{text}</button>            
+                               <button className="tb-btn" key={"scr-tb-btn-"+index}>{category_name}</button>            
                             );
-                        })         
+                        }) : null        
                     }
                 </div>
             </Fragment>

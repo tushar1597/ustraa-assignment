@@ -53,6 +53,12 @@
     height: 100%;
     margin-left: auto;
 }
+.ust-hdr .ust-hd-dr-btn{
+    width: 48px;
+    height: 48px;
+    padding:0;
+    min-width: 48px;
+}
 .ust-hdr .srch-inp{
     width: 100%;
     max-width: 600px;
@@ -121,4 +127,15 @@
     width: 28px;
     height: 28px;
     margin-right: 2px;
+}
+.ust-dr-container {
+    
+}
+.ust-dr-container .dr-it{
+
+}
+.ust-dr-container .dr-hd{
+    font-weight: 500;
+    padding: 10px 16px;
+    margin: 10px 0px;
 }
