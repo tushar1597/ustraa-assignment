@@ -1,7 +1,7 @@
 .ust-hdr-wr{
     position: fixed;
     height: 4.375rem;
-    background: #fff;
+    background: var(--paper-bg);
     display: flex;
     width: 100%;
     z-index:1000;
@@ -15,11 +15,10 @@
     position: sticky;
     top: 0;
     z-index:5;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 15px 0px;
+    box-shadow: var(--box-shadow) 0px 2px 15px 0px;
 }
 .ust-hdr{
     position: fixed;
-    /* background: yellow; */
     max-width: var(--pg-width);
     width: 100%;
     margin: 0 auto;
@@ -32,24 +31,20 @@
     object-fit: contain;
     width: 107px;
     height: 32px;
-    /* background: green; */
 }
 .ust-hdr .mn-icn{
-    /* background: orange; */
     padding: 12px; 
 }
 .ust-hdr .ust-logo{
     width: 166px;
     display: flex;
     align-items: center;
-    /* background: skyblue; */
     height: 100%;
     padding: 0 8px;
     box-sizing: border-box;
 }
 .ust-hdr .rgt-sec{
     width: calc(166px + 48px);
-    /* background: pink; */
     height: 100%;
     margin-left: auto;
     display: flex;
@@ -72,15 +67,14 @@
 }
 .ust-hdr .srch-inp{
     width: 100%;
-    /* max-width: 600px; */
     height: 100%;
     border: none;
     box-sizing: border-box;
     max-height: 48px;
     outline: none;
     padding: 0 40px;
-    background-color: #efefef;
-    color: rgba(0, 0, 0, 0.87);
+    background-color: var(--light-grey);
+    color: var(--text-color-dark-80);
 }
 .ust-hdr .srch-inp-btn,.ust-hdr .srch-inp-btn:focus{
     width: 100%;
@@ -88,8 +82,8 @@
     outline: none;
     position: relative;
     padding: 0 40px;
-    background-color: #efefef;
-    color: rgba(0, 0, 0, 0.57);
+    background-color: var(--light-grey);
+    color: var(--text-color-dark-80);
     text-align: left;
     display: block;
     text-transform: none;
@@ -99,7 +93,7 @@
     left: 12px;
     top: 12px;
     font-size: 24px;
-    color: rgba(0, 0, 0, 0.76);
+    color: var(--text-color-dark-80);
 }
 .ust-hdr .srch-fm{
     width: 100%;
@@ -107,13 +101,11 @@
     height: 100%;
     position: relative;
     max-height: 48px;
-    /* background: orange; */
 }
 .ust-hdr .srch-fm-sc{
     width: calc(100% - 166px - 48px - 166px - 48px);
     height: 100%;
     position: relative;
-    /* background: palegreen; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,25 +115,18 @@
     height: 36px;
     box-sizing: border-box;
     padding-left: 10px;
-    /* background: palegreen; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .ust-bnr{
-    /* margin-top: -10px; */
     height: 55px;
-    /* background: olivedrab; */
     padding-bottom: 5px;
     z-index: 100;
     position: sticky;
     top: 0;
     background: #fff;
-    /* display: flex; */
     width: calc(100%);
-    /* margin: 0 12px; */
-    /* justify-content: center; */
-    /* padding: 0 10px 5px 10px; */
     padding: 0 24px;
     overflow: hidden;
     box-sizing: border-box;
@@ -155,13 +140,12 @@
     max-width: 11.11111%;
     padding:0px 4px;
     box-sizing: border-box;
-    /* background: skyblue; */
 }
 .ust-bnr .bnr-lnk{
     display: inline-flex;
     font-size: 14px;
     height: 100%;
-    /* background: pink; */
+    color: var(--text-color-dark);
     align-items: center;
     justify-content: center;
     padding: 0 0 0 8px ;
@@ -177,13 +161,16 @@
     flex-wrap: wrap;
     margin-right: -16px;
     margin-left: -16px;
-    /* background: yellow; */
     height: 100%;
 }
 .ust-bnr .bnr-img{
     width: 28px;
     height: 28px;
     margin-right: 4px;
+}
+.ust-bnr .bnr-icn{
+    font-size: 20px;
+    margin-right: 2px;
 }
 .ust-dr-container {
 
@@ -198,7 +185,6 @@
 }
 .ust-hdr .ust-hrd-ct{
     display: flex;
-    /* padding: 0 10px; */
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -213,18 +199,52 @@
     
 }
 .ust-hdr-wr .msg-btn{
-    /* background: yellowgreen; */
     width: 48px;
     height: 100%;
     min-width: 0;
     margin-left: auto;
 }
-@media (max-width: 1000px){
+@media (max-width: 1000px) and (min-width:799px){
     .ust-bnr .ust-row{
         min-width: 1060px;
     }   
+    .ust-bnr{
+        overflow: auto;
+    }
+    .ust-bnr::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media (max-width: 798px) and (min-width:501px){
+    .ust-bnr .ust-row{
+        min-width: 960px;
+    }   
+    .ust-bnr{
+        overflow: auto;
+    }
+    .ust-bnr::-webkit-scrollbar{
+        display: none;
+    }
+    .ust-hdr .ust-icn{
+        display:none;
+    }
+    .ust-hdr .ust-logo{
+        width: 0px;
+        padding:0;
+    }
+    .ust-hdr .srch-fm-sc{
+        width: calc(100% - 80px - 80px - 48px - 48px)
+    }
+    .ust-hdr .rgt-sec{
+        width: calc(48px + 80px);
+    }
 }
 @media (max-width: 500px){
+    .ust-bnr .bnr-icn{
+        font-size: 24px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+    }
     .ust-hdr-wr .srch-icn{
         left: 5px;
         top: 7px;
@@ -232,7 +252,6 @@
     .ust-hdr .ust-icn{
         width: 93px;
         height: 28px;
-        /* background: red; */
     }
     .ust-hdr-wr .ust-hd-bt-sc{
         display: flex;
@@ -243,10 +262,8 @@
     .ust-bnr{
         padding: 0 16px; 
         width: max-content;
-        /* overflow: scroll;  */
     }
     .ust-bnr::-webkit-scrollbar{
-        /* display: none; */
     }   
     .ust-bnr .bnr-lnk{
         flex-direction: column;
@@ -258,14 +275,11 @@
         min-width: max-content;
     }
     .ust-bnr .bnr-col {
-        /* flex: 0 0 11.11111%; */
-        /* max-width: 11.11111%; */
         max-width: max-content;
         flex: none;
         min-width: 60px;
         padding: 0px 4px;
         box-sizing: border-box;
-        /* background: skyblue; */
     }
     .ust-hdr .srch-fm{
         display: none;
@@ -273,15 +287,11 @@
     .ust-hdr-wr{
         padding: 0 10px;
         box-sizing: border-box;
-        /* background: blue; */
         display: flex;
         height: calc(64px + 36px);
-        /* width: calc(100% - 20px); */
-        /* margin-left: 10px; */
         overflow: hidden;
     }
     .ust-hdr{
-        /* background: yellow; */
         width: 100%;
         height: calc(3.125rem + 36px);
         max-width: 100%;

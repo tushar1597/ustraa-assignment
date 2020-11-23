@@ -11,7 +11,6 @@ export const setPageTab = () => dispatch => {
     dispatch(action);    
 }
 export const getCategoriesAPI = () => dispatch => {
-    console.log("called-2");
     var req_data = {
         headers: {
 
@@ -41,6 +40,12 @@ export const setScrollRef = (ref) => dispatch => {
     action.value = ref;
     dispatch(action);
 }
+export const setToShowLength = (val) => dispatch => {
+    let action = {};
+    action.type = PRODUCT.SET_TO_SHOW_LENGTH;
+    action.value = val;
+    dispatch(action);
+}
 export const setViewAll = (val) => dispatch => {
     let action = {};
     action.type = PRODUCT.SET_VIEW_ALL;
@@ -58,6 +63,10 @@ export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
             dispatch(action);
         return;
     }
+    let loading_action = {};
+    loading_action.type = PRODUCT.PR_LOADING;
+    loading_action.value = true;
+    dispatch(loading_action);
     var req_data = {
         headers: {
             "Content-Type": "application/json; charset=utf-8"
@@ -68,6 +77,10 @@ export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
       }
       axios.get(ROUTES.GET_CATEGORY_PRODUCTS, req_data)
           .then(res => {
+            let loading_action = {};
+            loading_action.type = PRODUCT.PR_LOADING;
+            loading_action.value = false;
+            dispatch(loading_action);
             console.log(res);
             let products = res && res.data  && res.data.products ? res.data.products : [];
             let new_product_map = JSON.parse(JSON.stringify(product_map));

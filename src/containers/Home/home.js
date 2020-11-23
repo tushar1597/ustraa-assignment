@@ -1,14 +1,10 @@
 import React, { Component, Fragment } from "react";
-// import {  } from '../constants/constants';
-// import axios from 'axios';
 import './home.css'
 import { isMobile } from 'react-device-detect';
 import {getCategoriesAPI,setSelectedCategoryAPI,setViewAll} from "../../actions/product.action";
 import { connect } from 'react-redux';
 import { Switch, Redirect, withRouter } from 'react-router';
-import Header from "../../components/Header/header";
 import Button from '@material-ui/core/Button';
-import Footer from "../../components/Footer/footer";
 import ScrollableTab from "../../components/Tabs/scrollable-tab";
 import ProductList from "./product-list";
 import MenuItem from '@material-ui/core/MenuItem';
@@ -61,7 +57,6 @@ class Home extends Component {
     }
     
     render() {
-        console.log(this.props.to_shw_lgth,this.props.catgs.length);
         return(
             <Fragment>
                 <div className="hm-container">

@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-// import {  } from '../constants/constants';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Switch, Redirect, withRouter } from 'react-router';
@@ -11,12 +9,8 @@ import UstraaLogo from '../../assets/images/ust-logo.png';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import MessageIcon from '@material-ui/icons/Message';
-// import FullScreenLoader from '../components/loader/full-screen-loader';
-// import Sidepanel from './sidepanel/sidepanel';
-// import SignInPage from './sign-in-page';
-// import {setIsLoggedIn, getSellerUserAPI} from '../actions/util.action';
-// import { STORAGEFUNCTIONS } from '../utils/functions'; 
 import './header.css'
 import  Drawer  from "../Drawer/drawer";
 import HorizontalScrollbar from "../Scrollbar/horizontal-scrollbar";
@@ -38,7 +32,7 @@ class Header extends Component {
                     <Drawer button={<MenuIcon className="mn-icn"/>} classes={{button:'ust-hd-dr-btn'}}>
                     <div className="ust-dr-container">
                     <div className="dr-it">
-                        <p className="dr-hd">Shop by Category</p>
+                        <p className="dr-hd">Welcome to Ustraa.com</p>
                     </div>
                     </div>
                     </Drawer>
@@ -77,7 +71,7 @@ class Header extends Component {
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/gift_3.png"/>Gift Packs</Link></div>
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/FaceWash.png"/>Face Wash</Link></div>
                     <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/Lip_Balm_option2_1.png"/>Winter Care</Link></div>
-                    <div className="bnr-col"><Link className="bnr-lnk" to="/"><img className="bnr-img" src="https://d1ebdenobygu5e.cloudfront.net/media/catalog/product/gallery/resized/300/icon_2_1_.png"/>More Categories</Link></div>
+                    <div className="bnr-col"><Link className="bnr-lnk" to="/"><AddCircleOutlineIcon className="bnr-icn"/>More Categories</Link></div>
                 </div>   
                 </div>
                 </HorizontalScrollbar>                       
@@ -88,8 +82,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => (
     {
-        // fs_loading : state.util.fs_loading,
-        // is_lg_in : state.util.is_lg_in,
+
     })
 
 const mapDispatchToProps = {

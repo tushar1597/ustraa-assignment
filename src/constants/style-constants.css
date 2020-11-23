@@ -3,4 +3,16 @@
     --pg-width: 76rem;
     --font: 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;  
     --theme-blue: #187dbb;
+    --light-grey: #efefef;
+    --text-color-dark: #000;
+    --text-color-dark-80: rgba(0,0,0,0.8);
+    --dark-grey: #757575;
+    --transparent: rgba(0,0,0,0);
+    --theme-green: rgb(79, 207, 100);
+    --paper-bg: #fff;
+    --white: #fff;
+    --box-shadow:rgba(0, 0, 0, 0.16);
+    --dark-grey-80: rgba(204, 204, 204, 0.8);
+    --footer-bg: #f3f3f3;
+    --footer-text-color: rgb(117,117,117); 
   }

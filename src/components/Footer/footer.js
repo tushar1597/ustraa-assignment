@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-// import {  } from '../constants/constants';
-// import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { Switch, Redirect, withRouter } from 'react-router';
@@ -17,11 +15,6 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import MailIcon from '@material-ui/icons/Mail';
 import GooglePlay from '../../assets/images/google-play.png';
 import AppleStore from '../../assets/images/apple-store.png';
-// import FullScreenLoader from '../components/loader/full-screen-loader';
-// import Sidepanel from './sidepanel/sidepanel';
-// import SignInPage from './sign-in-page';
-// import {setIsLoggedIn, getSellerUserAPI} from '../actions/util.action';
-// import { STORAGEFUNCTIONS } from '../utils/functions'; 
 
 class Footer extends Component {
     constructor(props){
@@ -164,8 +157,7 @@ class Footer extends Component {
 
 const mapStateToProps = (state) => (
     {
-        // fs_loading : state.util.fs_loading,
-        // is_lg_in : state.util.is_lg_in,
+
     })
 
 const mapDispatchToProps = {

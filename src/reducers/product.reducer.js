@@ -1,4 +1,3 @@
-// import { PAGE_TYP } from '../constants/constants.js';
 import { PRODUCT } from '../actions/action-types';
 
 const initialState = {
@@ -11,7 +10,8 @@ const initialState = {
     product_map: {
 
     },
-    sc_ref: null 
+    sc_ref: null,
+    pr_loading: false 
 }
 
 const productReducer = (state = initialState, action) => {
@@ -47,8 +47,16 @@ const productReducer = (state = initialState, action) => {
                 prd_lst : action.value,
             }
         }
-
-       
+        case PRODUCT.SET_TO_SHOW_LENGTH : {
+            return {...state,
+                to_shw_lgth : action.value,
+            }
+        }
+       case PRODUCT.PR_LOADING : {
+           return {...state,
+            pr_loading : action.value,
+        }
+       }
 		default:
 			return state;
 	}
