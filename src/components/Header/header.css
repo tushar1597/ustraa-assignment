@@ -14,6 +14,7 @@
     height: 70px;
     position: sticky;
     top: 0;
+    z-index:5;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 15px 0px;
 }
 .ust-hdr{
@@ -132,7 +133,7 @@
     height: 55px;
     /* background: olivedrab; */
     padding-bottom: 5px;
-    /* z-index: 100; */
+    z-index: 100;
     position: sticky;
     top: 0;
     background: #fff;

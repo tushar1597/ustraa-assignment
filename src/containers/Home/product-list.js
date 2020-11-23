@@ -24,9 +24,12 @@ class ProductList extends Component {
         return(
             <Fragment>
                 <div className="prd-lst-container">
-                    <div className="prd-lst-row">
+                    <div className={this.props.vw_all ? "prd-lst-row" : "prd-lst-row prd-lst-row-fl"}>
                         {
-                            this.props.prd_lst && this.props.prd_lst.map ? this.props.prd_lst.map(({name,price,rating,url,final_price,id,image_urls},index)=>{
+                            this.props.prd_lst && this.props.prd_lst.map ? this.props.prd_lst.map(({name,price,rating,url,final_price,id,image_urls,is_in_stock,weight,weight_unit,how_to_use_video},index)=>{
+                                if(!this.props.vw_all && index > this.props.to_shw_lgth -1){
+                                    return;
+                                }
                                 return(
                                     <div className="prd-lst-col">
                                         <div className={rating ? "str-sc mb" : "hide"}>
@@ -36,7 +39,7 @@ class ProductList extends Component {
                             <div className={rating ? "str-sc wb" : "hide"}>
                                         <p className="str-rtg">{rating}</p><StarRateIcon className="str-icn"/>
                                         </div>
-                            <div className="htu-sc wb">
+                            <div className={how_to_use_video && how_to_use_video.video_url ? "htu-sc wb" : 'hide'}>
                                             <YouTubeIcon className="htu-icn"/><p className="htu-txt">How to use</p>
                                         </div>
                                 <Link to="/" className="crd-lnk">
@@ -44,15 +47,16 @@ class ProductList extends Component {
                                 </Link>
                             </div>
                             <div className="crd-sc-2">
-                            <div className="htu-sc mb">
+                            <div className={how_to_use_video && how_to_use_video.video_url ? "htu-sc mb" : 'hide'}>
                                             <YouTubeIcon className="htu-icn"/><p className="htu-txt">How to use</p>
                                         </div>
                                 <p className="crd-nm">{name}</p>
                                 <div className="crd-prc-sc">
                                     <p className="crd-prc">₹ {final_price}</p>
                                 <p className="crd-prc-fk">₹ {price}</p>
+                                <p className="crd-wt">{'(' + weight + ' ' + weight_unit+ ')'}</p>
                                 </div>
-                                <Button className="crd-btn">Add to cart</Button>
+                                <Button className={is_in_stock ? "crd-btn" : "crd-btn crd-btn-ds"}>{is_in_stock ? "Add to cart" : "Out of Stock"}</Button>
                             </div>
                          </div>
                                 );
@@ -68,6 +72,8 @@ class ProductList extends Component {
 const mapStateToProps = (state) => (
     {
         prd_lst: state.product.prd_lst,
+        to_shw_lgth: state.product.to_shw_lgth,
+        vw_all: state.product.vw_all,
         // fs_loading : state.util.fs_loading,
         // is_lg_in : state.util.is_lg_in,
     })

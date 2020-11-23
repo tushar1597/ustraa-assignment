@@ -6,6 +6,8 @@ const initialState = {
     catgs : [],
     prd_lst : [],
     sel_catg_id : 185,
+    vw_all: false,
+    to_shw_lgth:3, //to show length
     product_map: {
 
     },
@@ -20,8 +22,12 @@ const productReducer = (state = initialState, action) => {
                 prd_lst: action.prd_lst,
             }
         }
+        case PRODUCT.SET_VIEW_ALL : {
+            return { ...state,
+                vw_all: action.value,
+            }
+        }
         case PRODUCT.SET_SCROLL_REF : {
-            console.log(action);
             return { ...state,
                 sc_ref: action.value
             }

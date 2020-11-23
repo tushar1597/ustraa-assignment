@@ -1,6 +1,7 @@
 .prd-lst-container{
     padding: 0 16px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .prd-lst-container .prd-lst-row{
     display: -ms-flexbox;
@@ -9,9 +10,27 @@
     flex-wrap: wrap;
     margin-right: -16px;
     margin-left: -16px;
+    max-height: 10px;
+    transition: max-height ease 10s;
     /* background: yellow; */
     /* height: 100%; */
     /* box-sizing: content-box; */
+}
+.hm-container .vw-btn-wb{
+    display: block;
+    margin: 0 auto;
+    min-width: 200px;
+    font-size: 14px;
+    text-transform: none;
+    font-family: var(--font);
+    border: 1px solid var(--theme-blue);
+    color: var(--theme-blue);
+    border-radius: 0;
+    padding:16px 0;
+    margin-bottom: 50px;
+}
+.prd-lst-container .prd-lst-row{
+    max-height: 5000px;
 }
 .prd-lst-container .prd-lst-col{
     flex: 0 0 33.333333%;
@@ -79,6 +98,13 @@
     -webkit-text-decoration: line-through;
     text-decoration: line-through;
 }
+.prd-lst-container .crd-wt{
+    font-size: 10px;
+    color: #757575;
+    font-weight: 400;
+    margin:0;
+    margin-left: 10px;
+}
 .prd-lst-container .crd-btn{
     min-width:0;
     width: 200px;
@@ -96,6 +122,12 @@
     text-transform: uppercase;
     color: #fff;
     font-size: 14px;
+}
+.prd-lst-container .crd-btn:focus,.prd-lst-container .crd-btn:hover{
+    background-color: rgb(79, 207, 100);
+}
+.prd-lst-container .crd-btn-ds,.prd-lst-container .crd-btn-ds:focus{
+    background: #b0b0b0!important;
 }
 .prd-lst-container .crd-btn:active, .prd-lst-container .crd-btn:focus{
     background-color: rgb(79, 207, 100);
@@ -147,6 +179,9 @@
 .hm-container .cs-catg{
     /* background: red; */
     width: 72%;
+}
+.hm-container .cs-catg-fl{
+    width: 100%;
 }
 .hm-container .vw-btn{
     width: 28%;

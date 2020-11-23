@@ -41,6 +41,12 @@ export const setScrollRef = (ref) => dispatch => {
     action.value = ref;
     dispatch(action);
 }
+export const setViewAll = (val) => dispatch => {
+    let action = {};
+    action.type = PRODUCT.SET_VIEW_ALL;
+    action.value = val;
+    dispatch(action);
+}
 export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
     let action = {};
     action.type = PRODUCT.SET_SEL_CATEGORY;
