@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Clone the the project and checkout to the master branch
+git clone https://github.com/tushar1597/ustraa-assignment.git 
+
+## Installation 
+
+Run 
+
+### `npm install` 
+
+To install all the modules, node version 10.15.3
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -9,7 +21,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:7012](http://localhost:7012) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
