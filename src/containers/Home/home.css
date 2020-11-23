@@ -475,6 +475,8 @@
         width: 70%;
         overflow: hidden;
         position: relative;
+        box-sizing: border-box;
+        padding-left: 3px;
     }
     .prd-lst-container .crd-lnk{
         height: 110px;

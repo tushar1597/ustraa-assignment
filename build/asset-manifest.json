@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.d5af5e06.chunk.css",
+    "main.css": "/static/css/main.86b82189.chunk.css",
     "main.js": "/static/js/main.bc321cf0.chunk.js",
     "main.js.map": "/static/js/main.bc321cf0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.691a64da.js",
@@ -8,9 +8,9 @@
     "static/js/2.b6cce712.chunk.js": "/static/js/2.b6cce712.chunk.js",
     "static/js/2.b6cce712.chunk.js.map": "/static/js/2.b6cce712.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9c4d513ac397e7fab9203ccfa3c8c644.js": "/precache-manifest.9c4d513ac397e7fab9203ccfa3c8c644.js",
+    "precache-manifest.2408c23b52da753a236eb134424fcd69.js": "/precache-manifest.2408c23b52da753a236eb134424fcd69.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.d5af5e06.chunk.css.map": "/static/css/main.d5af5e06.chunk.css.map",
+    "static/css/main.86b82189.chunk.css.map": "/static/css/main.86b82189.chunk.css.map",
     "static/js/2.b6cce712.chunk.js.LICENSE.txt": "/static/js/2.b6cce712.chunk.js.LICENSE.txt",
     "static/media/google-play.png": "/static/media/google-play.0b0baeb1.png",
     "static/media/ust-logo.png": "/static/media/ust-logo.e7798323.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.691a64da.js",
     "static/js/2.b6cce712.chunk.js",
-    "static/css/main.d5af5e06.chunk.css",
+    "static/css/main.86b82189.chunk.css",
     "static/js/main.bc321cf0.chunk.js"
   ]
 }
