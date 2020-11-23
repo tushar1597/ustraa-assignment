@@ -62,7 +62,7 @@ class ProductList extends Component {
                                 </div>
                                 <p className={weight ? "crd-wt" : "hide"}>{'(' + weight + ' ' + weight_unit+ ')'}</p>
                                                                 </div>
-                                <Button className={is_in_stock ? "crd-btn" : "crd-btn crd-btn-ds"}>{is_in_stock ? "Add to cart" : "Out of Stock"}</Button>
+                                <Button disabled={is_in_stock ? false : true} className={is_in_stock ? "crd-btn" : "crd-btn crd-btn-ds"}>{is_in_stock ? "Add to cart" : "Out of Stock"}</Button>
                             </div>
                          </div>
                                 );
