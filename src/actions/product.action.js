@@ -21,7 +21,6 @@ export const getCategoriesAPI = () => dispatch => {
       }
       axios.get(ROUTES.GET_CATEGORIES_AND_PRODUCTS, req_data)
           .then(res => {
-            console.log(res);
             let categories = res && res.data  && res.data.category_list ? res.data.category_list : [];
             let product_list = res && res.data  && res.data.product_list && res.data.product_list.products ? res.data.product_list.products : [];
             let action = {};
@@ -30,8 +29,7 @@ export const getCategoriesAPI = () => dispatch => {
             action.prd_lst = product_list;
             dispatch(action); 
           }).catch(err => {
-              // console.log("ERROR::",err);
-            //   FUNCTIONS.errorHandler(err,dispatch);
+              console.log("ERROR::",err);
           })
 }
 export const setScrollRef = (ref) => dispatch => {
@@ -81,7 +79,6 @@ export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
             loading_action.type = PRODUCT.PR_LOADING;
             loading_action.value = false;
             dispatch(loading_action);
-            console.log(res);
             let products = res && res.data  && res.data.products ? res.data.products : [];
             let new_product_map = JSON.parse(JSON.stringify(product_map));
             new_product_map[catg_id] = products;
@@ -93,7 +90,6 @@ export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
             action.value = new_product_map[catg_id];
             dispatch(action);
           }).catch(err => {
-              // console.log("ERROR::",err);
-            //   FUNCTIONS.errorHandler(err,dispatch);
+              console.log("ERROR::",err);
           })
 }

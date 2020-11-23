@@ -11,9 +11,16 @@ require('@babel/register')({
       {
         "extensions": [
           "css",
-          "svg"
+          "svg",
+          "png"
         ],
         "name": "static/media/[name].[hash:8].[ext]"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
       }
     ]
   ]

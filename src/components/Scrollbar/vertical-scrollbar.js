@@ -47,7 +47,6 @@ class VerticalScrollbar extends Component {
     componentDidUpdate(prev_props,prev_state,snapshot) {
         if (this.props.children != prev_props.children) {
             const scrollHostElement = this.scrollHostRef;
-            console.log(this.scrollHostRef);
             if(!scrollHostElement){
                 return;
             }
@@ -167,8 +166,6 @@ class VerticalScrollbar extends Component {
 
 
     render() {
-        // alert(this.state.isScrollable);
-        // console.log(isMobile);
             return (
                 <div
                     className={(this.state.isScrollable ? "vr-scrollhost-container" : "vr-scrollhost-container") + " " + (this.props.isHover ? "is-hover" : "")}

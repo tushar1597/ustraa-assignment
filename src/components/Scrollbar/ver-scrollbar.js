@@ -60,7 +60,6 @@ export default function CustomScrollbar2({ children, className }) {
     e.stopPropagation();
     setScrollThumbPosition(e.clientY);
     setDragging(true);
-    console.log("handleScrollThumbMouseDown");
   }, []);
 
   const handleScroll = useCallback(() => {

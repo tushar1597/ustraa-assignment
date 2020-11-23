@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 import { Switch, Redirect, withRouter } from 'react-router';
 import Header from "../../components/Header/header";
 import { Link } from 'react-router-dom';
-import Footer from "../../components/Footer/footer";
-import ScrollableTab from "../../components/Tabs/scrollable-tab";
 import StarRateIcon from '@material-ui/icons/StarRate';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import Button from '@material-ui/core/Button';
@@ -15,7 +13,7 @@ import {setToShowLength} from '../../actions/product.action';
 
 class ProductList extends Component {
     componentDidUpdate(prev_props){
-     console.log(this.props.prd_lst);   
+
     }
     componentDidMount() {
         if(window.innerWidth > 500 && window.innerWidth < 799){
