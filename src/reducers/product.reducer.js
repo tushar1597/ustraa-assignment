@@ -8,7 +8,8 @@ const initialState = {
     sel_catg_id : 185,
     product_map: {
 
-    }
+    },
+    sc_ref: null 
 }
 
 const productReducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const productReducer = (state = initialState, action) => {
             return {...state,
                 catgs: action.catgs,
                 prd_lst: action.prd_lst,
+            }
+        }
+        case PRODUCT.SET_SCROLL_REF : {
+            console.log(action);
+            return { ...state,
+                sc_ref: action.value
             }
         }
         case PRODUCT.SET_SEL_CATEGORY : {

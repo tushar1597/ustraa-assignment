@@ -28,6 +28,39 @@ class Home extends Component {
     }
     setSelectedCategory = (catg_id) => {
         this.props.setSelectedCategoryAPI(catg_id,this.props.product_map);
+        // this.props.sc_ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        console.log(this.props.sc_ref);
+        let scroll_div = this.props.sc_ref.current.scrollHostRef;
+        // console.log(this.props.sc_ref.current.scrollHostRef.scrollIntoView());
+
+        // window.scrollTo({ behavior: 'smooth', top: this.props.sc_ref.current.offsetTop })
+        // console.log(this.props.sc_ref.current.scrollIntoView);
+        // window.scrollTo(0,0);
+        // let elem = document.getElementById('catg-tb-id');
+        // elem.scrollIntoView();
+        window.scrollTo({
+            top: 50,
+            behavior: "smooth",
+        });
+        let tab = document.getElementById("catg_tab_"+catg_id);
+        // console.log(tab.getBoundingClientRect());
+        // console.log(scroll_div.getBoundingClientRect());
+        let tab_bounds = tab.getBoundingClientRect();
+        let scroll_bounds = scroll_div.getBoundingClientRect();
+        let ts = tab_bounds.left;
+        // let te = tab_bounds.right;
+        // let ss = scroll_bounds.left;
+        // let se = scroll_bounds.right;
+        let offset = 54;
+        let sc_val;
+        console.log(ts)
+        // if(ts > ss + offset){
+            sc_val = ts - offset;
+            scroll_div.scrollBy({ left: sc_val, behavior:'smooth'});
+        // }else if(ts < ss + offset){
+            // sc_val = offset - ts;
+            // scroll_div.scrollBy({ left: -sc_val, behavior:'smooth'});
+        // }
     }
     handleCatgoryChange = (e) => {
         if(e.target && e.target.value){
@@ -40,7 +73,9 @@ class Home extends Component {
             <Fragment>
                 <div className="hm-container">
                 <h1 className="mn-hdng">Our Products</h1>
+                <div className="hm-tb-wr">
                 <ScrollableTab active={this.props.sel_catg_id} items={this.props.catgs} onClick={this.setSelectedCategory}/>
+                </div>
                 <ProductList/>
                 <div className="sel-sc">
                 <CustomSelect  id={"catg-select-id"} classes={{ root: "cs-catg"}} value={this.props.sel_catg_id} data={[]} handleChange={(e) => this.handleCatgoryChange(e)}>
@@ -76,7 +111,8 @@ const mapStateToProps = (state) => (
     {
         catgs: state.product.catgs,
         sel_catg_id: state.product.sel_catg_id,
-        product_map: state.product.product_map
+        product_map: state.product.product_map,
+        sc_ref: state.product.sc_ref,
         // fs_loading : state.util.fs_loading,
         // is_lg_in : state.util.is_lg_in,
     })

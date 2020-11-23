@@ -232,7 +232,12 @@
 .cus-sel-val{
     /* background: yellowgreen; */
 }
+.hm-container .hm-tb-wr{
+}
 @media (max-width: 500px){
+    .hm-container .hm-tb-wr{
+        margin-left: 10px;
+    }
     .prd-lst-container .mb{
         display: flex;
     }

@@ -35,6 +35,12 @@ export const getCategoriesAPI = () => dispatch => {
             //   FUNCTIONS.errorHandler(err,dispatch);
           })
 }
+export const setScrollRef = (ref) => dispatch => {
+    let action = {};
+    action.type = PRODUCT.SET_SCROLL_REF;
+    action.value = ref;
+    dispatch(action);
+}
 export const setSelectedCategoryAPI = (catg_id,product_map) => dispatch =>{
     let action = {};
     action.type = PRODUCT.SET_SEL_CATEGORY;
