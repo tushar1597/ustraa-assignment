@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { StaticRouter } from 'react-router';
 
 import './App.css';
 import LandingPage from './containers/LandingPage/landing-page';
@@ -24,16 +23,9 @@ function App (props) {
   return (
     <Provider store={props.store}>
       {
-        props.location
-        ? (
-          <StaticRouter location={props.location} context={{}}>
-            <AppRoutes store={props.store}/>
-          </StaticRouter>
-        ) : (
           <BrowserRouter>
             <AppRoutes/>
           </BrowserRouter>  
-        )
       }
     </Provider>
   );
