@@ -55,7 +55,7 @@ class ProductList extends Component {
                                 <div className="crd-prc-sc">
                                     <p className="crd-prc">₹ {final_price}</p>
                                 <p className="crd-prc-fk">₹ {price}</p>
-                                <p className="crd-wt">{'(' + weight + ' ' + weight_unit+ ')'}</p>
+                                <p className={weight ? "crd-wt" : "hide"}>{'(' + weight + ' ' + weight_unit+ ')'}</p>
                                 </div>
                                 <Button className={is_in_stock ? "crd-btn" : "crd-btn crd-btn-ds"}>{is_in_stock ? "Add to cart" : "Out of Stock"}</Button>
                             </div>
