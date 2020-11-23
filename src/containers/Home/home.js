@@ -18,7 +18,11 @@ class Home extends Component {
         this.props.getCategoriesAPI();
     }
     setSelectedCategory = (catg_id) => {
-        this.props.setSelectedCategoryAPI(catg_id,this.props.product_map);
+        console.log(this.props.sel_catg_id,catg_id)
+        if(this.props.sel_catg_id != catg_id && catg_id){
+            this.props.setSelectedCategoryAPI(catg_id,this.props.product_map);
+            this.props.setViewAll(false);
+        }
         let scroll_div = this.props.sc_ref.current.scrollHostRef;
 
         if(isMobile){

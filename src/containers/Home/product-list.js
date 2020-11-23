@@ -4,7 +4,6 @@ import React, { Component, Fragment } from "react";
 import './home.css'
 import { connect } from 'react-redux';
 import { Switch, Redirect, withRouter } from 'react-router';
-import Header from "../../components/Header/header";
 import { Link } from 'react-router-dom';
 import StarRateIcon from '@material-ui/icons/StarRate';
 import YouTubeIcon from '@material-ui/icons/YouTube';
@@ -20,6 +19,10 @@ class ProductList extends Component {
             this.props.setToShowLength(2);
         }
     }
+    loadImage = (e) => {
+        e.target.style.display = "block";
+        e.target.style.background = '#fff';
+    }
     
     render() {
         return(
@@ -32,7 +35,7 @@ class ProductList extends Component {
                                     return;
                                 }
                                 return(
-                                    <div className="prd-lst-col">
+                                    <div className="prd-lst-col" key={"prd-lst-col-"+index}>
                                         <div className={rating ? "str-sc mb" : "hide"}>
                                         <p className="str-rtg">{rating}</p><StarRateIcon className="str-icn"/>
                                         </div>
@@ -44,7 +47,7 @@ class ProductList extends Component {
                                             <YouTubeIcon className="htu-icn"/><p className="htu-txt">How to use</p>
                                         </div>
                                 <Link to="/" className="crd-lnk">
-                                    <img className="crd-img" src={image_urls && image_urls.x300 ? image_urls.x300 : ""}/>
+                                    <img onLoad={(e)=>this.loadImage(e)} className="crd-img" src={image_urls && image_urls.x300 ? image_urls.x300 : ""}/>
                                 </Link>
                             </div>
                             <div className="crd-sc-2">
@@ -53,10 +56,12 @@ class ProductList extends Component {
                                         </div>
                                 <p className="crd-nm">{name}</p>
                                 <div className="crd-prc-sc">
-                                    <p className="crd-prc">₹ {final_price}</p>
+                                <div className="crd-prc-ct">
+                                <p className="crd-prc">₹ {final_price}</p>                                
                                 <p className="crd-prc-fk">₹ {price}</p>
-                                <p className={weight ? "crd-wt" : "hide"}>{'(' + weight + ' ' + weight_unit+ ')'}</p>
                                 </div>
+                                <p className={weight ? "crd-wt" : "hide"}>{'(' + weight + ' ' + weight_unit+ ')'}</p>
+                                                                </div>
                                 <Button className={is_in_stock ? "crd-btn" : "crd-btn crd-btn-ds"}>{is_in_stock ? "Add to cart" : "Out of Stock"}</Button>
                             </div>
                          </div>
@@ -66,7 +71,7 @@ class ProductList extends Component {
                                 if(index > this.props.to_shw_lgth -1){
                                     return;
                                 }
-                                return(<div className="prd-lst-col">
+                                return(<div className="prd-lst-col" key={"prd-lst-col-" + index}>
                           
                                 <div className="crd-sc-1 crd-sc-1-ss">
                 

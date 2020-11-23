@@ -6,18 +6,21 @@ import { Redirect, withRouter } from 'react-router';
 import Header from "../../components/Header/header";
 import Footer from "../../components/Footer/footer";
 import Home from "../Home/home";
+import { Link } from 'react-router-dom';
+import SideAlongTooltip from "../../components/Tooltip/side-along-tooltip";
 
 class LandingPage extends Component {
     componentDidUpdate(prev_props){
         
     }
     componentDidMount() {
-
+    
     }
     
     render() {
         return(
             <Fragment>
+                <SideAlongTooltip longText={"help?"} shortText={"?"} to={"/"}/>
                 <Header/>
                 <div className="lp-container">
                 <Switch>
